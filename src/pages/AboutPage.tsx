@@ -54,7 +54,7 @@ const AboutPage: React.FC = () => {
               ${theme === 'neon' ? 'text-neon-secondary' : ''}
             `}>
               <p>
-                I'm a passionate developer with over 8 years of experience specializing in web and mobile development. 
+                I'm a passionate developer with over 4 years of experience specializing in web and mobile development. 
                 Throughout my career, I've dedicated myself to creating user-centric solutions that combine functionality 
                 with exceptional user experiences.
               </p>
@@ -98,7 +98,7 @@ const AboutPage: React.FC = () => {
                   ${theme === 'dark' ? 'text-dark-primary' : ''}
                   ${theme === 'neon' ? 'text-neon-primary' : ''}
                 `}>▹</span>
-                Based in New York, USA
+                Based in Nairobi, Kenya
               </li>
               <li className={`flex items-start
                 ${theme === 'light' ? 'text-light-secondary' : ''}
