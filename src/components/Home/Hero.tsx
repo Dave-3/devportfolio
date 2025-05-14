@@ -108,7 +108,7 @@ const Hero: React.FC = () => {
                 ${theme === 'dark' ? 'text-dark-primary' : ''}
                 ${theme === 'neon' ? 'text-neon-primary' : ''}
               `}>
-                Web Developer
+                Software Developer
               </h1>
             </motion.div>
 
@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
               initial="hidden"
               animate="visible"
             >
-              I'm a web developer with passion for creating minimalistic websites that are responsive,
+              I'm a software developer with passion for creating systems and minimalistic websites that are responsive,
               easy to maintain, easy to scale and most importantly prioritizes user experience.
               Love learning new technologies and incorporating them in to my workflow.
             </motion.p>
