@@ -110,7 +110,7 @@ const AboutPage: React.FC = () => {
                   ${theme === 'dark' ? 'text-dark-primary' : ''}
                   ${theme === 'neon' ? 'text-neon-primary' : ''}
                 `}>▹</span>
-                MSc in Computer Science
+                BSc in Software Engineering
               </li>
               <li className={`flex items-start
                 ${theme === 'light' ? 'text-light-secondary' : ''}
