@@ -78,12 +78,12 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         {
           id: 'email',
           text: 'Send an Email',
-          action: () => window.open('mailto:david.njenga@example.com?subject=Job Opportunity', '_blank')
+          action: () => window.open('mailto:mdnjenga@gmail.com?subject=Job Opportunity', '_blank')
         },
         {
           id: 'schedule',
           text: 'Schedule a Call',
-          action: () => window.open('https://calendly.com/example', '_blank')
+          action: () => window.open('https://calendly.com/mdnjenga/30min', '_blank')
         },
         {
           id: 'back',
@@ -98,12 +98,12 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         {
           id: 'email-project',
           text: 'Email Project Details',
-          action: () => window.open('mailto:david.njenga@example.com?subject=Project Inquiry', '_blank')
+          action: () => window.open('mailto:mdnjenga@gmail.com?subject=Project Inquiry', '_blank')
         },
         {
           id: 'schedule-project',
           text: 'Schedule a Discussion',
-          action: () => window.open('https://calendly.com/example', '_blank')
+          action: () => window.open('https://calendly.com/mdnjenga/30min', '_blank')
         },
         {
           id: 'back',

@@ -5,7 +5,6 @@ import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
-import ContactPage from './pages/ContactPage';
 import ChatBotButton from './components/Contact/ChatBotButton';
 
 function App() {
