@@ -58,7 +58,7 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         {
           id: 'view-resume',
           text: 'View Resume Online',
-          action: () => window.open('https://resume.example.com', '_blank')
+          action: () => window.open('https://311148810915127296.hello.cv/', '_blank')
         },
         {
           id: 'download-resume',
