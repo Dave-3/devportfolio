@@ -108,17 +108,20 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
           transition: 'opacity 500ms ease-out',
         }}
       >
-        {/* This inner div handles the wipe animation */}
+        {/* Left to right wipe overlay */}
         <div
           style={{
             position: 'absolute',
             top: 0,
             bottom: 0,
             left: 0,
-            right: 0,
+            width: '100%',
             background: theme === 'light' ? '#fff' : theme === 'dark' ? '#121212' : '#0A1E1A',
-            transform: isHovered ? 'translateX(-100%)' : 'translateX(0)',
-            transition: 'transform 500ms ease-in-out',
+            transform: `scaleX(${isHovered ? 0 : 1})`,
+            transformOrigin: 'left',
+            transition: isHovered
+              ? 'transform 500ms ease-out'
+              : 'transform 500ms ease-in',
             zIndex: 2
           }}
         />
