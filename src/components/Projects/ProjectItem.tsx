@@ -15,20 +15,20 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
 
   return (
     <motion.div
-      className="group relative mb-8 md:mb-10"
+      className="group relative mb-6 md:mb-4 border-b border-transparent"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
     >
       <div
-        className="flex flex-col md:flex-row items-start relative md:py-2 md:transition-all md:duration-300"
+        className="flex flex-col md:flex-row items-start relative md:py-2 md:transition-all md:duration-300 md:px-2 rounded"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
           background: isHovered ? (
-            theme === 'light' ? 'rgba(240, 240, 245, 0.1)' :
-            theme === 'dark' ? 'rgba(30, 30, 35, 0.1)' :
-            'rgba(10, 40, 35, 0.1)'
+            theme === 'light' ? 'rgba(240, 240, 245, 0.05)' :
+            theme === 'dark' ? 'rgba(30, 30, 35, 0.05)' :
+            'rgba(10, 40, 35, 0.05)'
           ) : 'transparent'
         }}
       >
@@ -56,7 +56,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
 
         {/* Project title and links */}
         <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-between">
-          <h3 className={`text-base font-sans mb-2 md:mb-0 transition-all duration-300
+          <h3 className={`text-base font-sans mb-2 md:mb-0 transition-all duration-300 uppercase tracking-wider
             ${isHovered ? 'font-medium' : 'font-normal'}
             ${theme === 'light' ? `text-light-text ${isHovered ? 'text-light-primary' : ''}` : ''}
             ${theme === 'dark' ? `text-dark-text ${isHovered ? 'text-dark-primary' : ''}` : ''}
@@ -104,7 +104,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
         `}
         style={{
           opacity: isHovered ? 1 : 0,
-          top: '-50%',
+          top: '-100px',
           transition: 'opacity 500ms ease-out',
         }}
       >

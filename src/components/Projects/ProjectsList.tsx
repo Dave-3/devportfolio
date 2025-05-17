@@ -92,6 +92,123 @@ const projectCategories: ProjectCategory[] = [
         mobileImage: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       }
     ]
+  },
+  {
+    id: 'freelance',
+    title: 'Freelance',
+    description: 'In the freelance world, versatility is key. Here, you\'ll find projects that showcase my ability to meet diverse client needs with precision and creativity.',
+    projects: [
+      {
+        id: 'freelance1',
+        title: 'SPIN TO WIN',
+        description: 'Interactive web-based game for a marketing campaign with engaging animations and user rewards system.',
+        year: '2024',
+        tags: ['React', 'GSAP', 'Firebase'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance2',
+        title: 'CAPITAL ONE HOME RUN DERBY',
+        description: 'Interactive baseball game simulation for Capital One\'s promotional event with real-time scoring and leaderboards.',
+        year: '2023',
+        tags: ['Three.js', 'WebGL', 'React'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/1661950/pexels-photo-1661950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/1661950/pexels-photo-1661950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance3',
+        title: 'AT&T METEOR GAME',
+        description: 'Mobile-first interactive game for AT&T\'s marketing campaign featuring WebGL animations and touch controls.',
+        year: '2023',
+        tags: ['JavaScript', 'Canvas API', 'Mobile Optimization'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/2510428/pexels-photo-2510428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/2510428/pexels-photo-2510428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance4',
+        title: 'COCA-COLA KICK UPS',
+        description: 'Interactive soccer game for Coca-Cola\'s World Cup campaign with physics-based gameplay and social sharing features.',
+        year: '2023',
+        tags: ['Phaser.js', 'React', 'Social API Integration'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/2361/nature-animal-wolf-wilderness.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/2361/nature-animal-wolf-wilderness.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance5',
+        title: 'BUICK ROAD TO GREATNESS',
+        description: 'Interactive driving experience showcasing Buick\'s new vehicle features with 3D visualization and customization options.',
+        year: '2022',
+        tags: ['Three.js', 'WebGL', 'React'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance6',
+        title: 'VERIZON KICK UPS',
+        description: 'Mobile-optimized interactive game for Verizon\'s sports sponsorship with real-time multiplayer functionality.',
+        year: '2022',
+        tags: ['Socket.io', 'React Native', 'Node.js'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance7',
+        title: 'ABUNDANCE PORTFOLIO SCROLL',
+        description: 'Animated scrolling portfolio website for a financial services company with data visualization and interactive charts.',
+        year: '2022',
+        tags: ['GSAP', 'D3.js', 'React'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/7567455/pexels-photo-7567455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/7567455/pexels-photo-7567455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance8',
+        title: 'DR. PEPPER METAVERSE',
+        description: 'Virtual reality experience for Dr. Pepper\'s digital marketing campaign with interactive 3D environments and mini-games.',
+        year: '2021',
+        tags: ['WebXR', 'Three.js', 'React'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/7567538/pexels-photo-7567538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/7567538/pexels-photo-7567538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance9',
+        title: 'DREAM MACHINE',
+        description: 'AI-powered creative tool for generating and customizing artwork based on user inputs and preferences.',
+        year: '2021',
+        tags: ['TensorFlow.js', 'WebGL', 'React'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/2693212/pexels-photo-2693212.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      },
+      {
+        id: 'freelance10',
+        title: 'NIKE PRODUCT CONFIGURATOR',
+        description: 'Interactive 3D product customization tool for Nike\'s e-commerce platform with real-time rendering and sharing capabilities.',
+        year: '2021',
+        tags: ['Three.js', 'WebGL', 'React'],
+        demoUrl: 'https://example.com',
+        githubUrl: 'https://github.com',
+        image: 'https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        mobileImage: 'https://images.pexels.com/photos/2385477/pexels-photo-2385477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      }
+    ]
   }
 ];
 
@@ -99,7 +216,7 @@ const ProjectsList: React.FC = () => {
   const { theme } = useTheme();
 
   return (
-    <section className="py-20">
+    <section className="py-20 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -124,7 +241,7 @@ const ProjectsList: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-24">
+        <div className="space-y-16">
           {projectCategories.map((category, index) => (
             <ProjectSection
               key={category.id}

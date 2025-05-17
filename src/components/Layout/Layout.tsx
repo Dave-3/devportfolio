@@ -10,7 +10,7 @@ const Layout: React.FC = () => {
 
   return (
     <div className={`
-      flex flex-col min-h-screen w-full overflow-x-hidden
+      flex flex-col min-h-screen w-full overflow-hidden
       ${theme === 'light' ? 'bg-light-bg text-light-text' : ''}
       ${theme === 'dark' ? 'bg-dark-bg text-dark-text' : ''}
       ${theme === 'neon' ? 'bg-neon-bg text-neon-text' : ''}

@@ -199,7 +199,7 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   };
 
   // Handle bot responses
-  const handleBotResponse = (responseKey: keyof typeof botResponses) => {
+  const handleBotResponse = (responseKey: 'welcome' | 'resume' | 'hire' | 'project' | 'hello' | 'skills' | 'experience' | 'fallback') => {
     const response = botResponses[responseKey];
 
     // Check if this exact message already exists to prevent duplicates
@@ -227,6 +227,13 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         handleBotResponse('welcome');
       }, 500);
     }
+
+    // Prevent body scrolling when chat is open on mobile
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -281,7 +288,7 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       className={`fixed inset-0 md:inset-auto md:bottom-6 md:right-6 w-full md:max-w-md rounded-none md:rounded-2xl shadow-xl overflow-hidden z-50 flex flex-col
-        h-screen max-h-screen md:h-[calc(100vh-6rem)] md:max-h-[700px]
+        h-[100dvh] md:h-[calc(100vh-6rem)] md:max-h-[700px]
         ${theme === 'light' ? 'bg-white border border-gray-200' : ''}
         ${theme === 'dark' ? 'bg-gray-900 border border-gray-800' : ''}
         ${theme === 'neon' ? 'bg-neon-bg border border-neon-primary/20' : ''}
