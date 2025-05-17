@@ -97,21 +97,30 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
       {/* Project image - shown on hover for desktop, always visible for mobile */}
       <div
         className={`
-          mt-4 md:mt-0 md:absolute md:top-0 md:left-0 md:transform
+          mt-4 md:mt-0 md:absolute md:top-0 md:left-1/2 md:transform md:-translate-x-1/2
           w-full md:w-[400px] md:h-auto md:aspect-[4/3] rounded-md overflow-hidden md:z-50
           md:pointer-events-none
           block md:hidden lg:block
         `}
         style={{
           opacity: isHovered ? 1 : 0,
-          transform: `translateY(-50%) translateX(${isHovered ? '100%' : '0%'})`,
-          transformOrigin: 'right center',
+          top: '-50%',
           transition: isHovered
-            ? 'opacity 300ms ease-out, transform 400ms ease-out'
-            : 'opacity 0ms linear 300ms, transform 300ms ease-in-out',
+            ? 'opacity 300ms ease-out'
+            : 'opacity 500ms ease-out',
           clipPath: isHovered
             ? 'inset(0 0 0 0)'
-            : 'inset(0 0 0 100%)'
+            : 'inset(0 0 0 100%)',
+          transitionProperty: isHovered
+            ? 'opacity, clip-path'
+            : 'opacity, clip-path',
+          transitionDuration: isHovered
+            ? '300ms, 300ms'
+            : '500ms, 500ms',
+          transitionTimingFunction: 'ease-out',
+          transitionDelay: isHovered
+            ? '0ms, 0ms'
+            : '0ms, 0ms'
         }}
       >
         <img
