@@ -119,9 +119,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
             background: theme === 'light' ? '#fff' : theme === 'dark' ? '#121212' : '#0A1E1A',
             transform: `scaleX(${isHovered ? 0 : 1})`,
             transformOrigin: 'left',
-            transition: isHovered
-              ? 'transform 500ms ease-out'
-              : 'transform 500ms ease-in',
+            transition: 'transform 500ms ease-in-out',
             zIndex: 2
           }}
         />

@@ -16,7 +16,7 @@ const Layout: React.FC = () => {
       ${theme === 'neon' ? 'bg-neon-bg text-neon-text' : ''}
     `}>
       <Navbar />
-      <main className="flex-grow pt-24 w-full">
+      <main className="flex-grow pt-16 w-full">
         <AnimatePresence mode="wait">
           <Outlet />
         </AnimatePresence>

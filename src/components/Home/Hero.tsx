@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center pt-8 overflow-hidden">
+    <section className="relative min-h-[90vh] flex flex-col justify-center pt-4 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className={`absolute top-0 right-0 w-full h-full bg-gradient-to-br opacity-10
