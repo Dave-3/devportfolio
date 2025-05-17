@@ -105,38 +105,40 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
         style={{
           opacity: isHovered ? 1 : 0,
           top: '-50%',
-          transition: isHovered
-            ? 'opacity 300ms ease-out'
-            : 'opacity 500ms ease-out',
-          clipPath: isHovered
-            ? 'inset(0 0 0 0)'
-            : 'inset(0 0 0 100%)',
-          transitionProperty: isHovered
-            ? 'opacity, clip-path'
-            : 'opacity, clip-path',
-          transitionDuration: isHovered
-            ? '300ms, 300ms'
-            : '500ms, 500ms',
-          transitionTimingFunction: 'ease-out',
-          transitionDelay: isHovered
-            ? '0ms, 0ms'
-            : '0ms, 0ms'
+          transition: 'opacity 500ms ease-out',
         }}
       >
+        {/* This inner div handles the wipe animation */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            background: theme === 'light' ? '#fff' : theme === 'dark' ? '#121212' : '#0A1E1A',
+            transform: isHovered ? 'translateX(-100%)' : 'translateX(0)',
+            transition: 'transform 500ms ease-in-out',
+            zIndex: 2
+          }}
+        />
+
         <img
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover object-center"
           style={{
             transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-            transition: 'transform 500ms ease-out'
+            transition: 'transform 500ms ease-out',
+            position: 'relative',
+            zIndex: 1
           }}
         />
         <div className={`absolute inset-0 opacity-0 ${isHovered ? 'md:opacity-5' : ''} transition-opacity duration-300
           ${theme === 'light' ? 'bg-light-primary' : ''}
           ${theme === 'dark' ? 'bg-dark-primary' : ''}
           ${theme === 'neon' ? 'bg-neon-primary' : ''}
-        `}></div>
+        `} style={{ zIndex: 1 }}></div>
       </div>
 
       {/* Mobile-only description */}
