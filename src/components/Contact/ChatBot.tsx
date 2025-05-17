@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
-import { X, Send, ExternalLink, Download, Mail, User, FileText } from 'lucide-react';
+import { X, Send, ExternalLink, Download, Mail, User, FileText, Clipboard } from 'lucide-react';
 
 // Define message types
 interface Message {
@@ -81,6 +81,18 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           action: () => window.open('mailto:mdnjenga@gmail.com?subject=Job Opportunity', '_blank')
         },
         {
+          id: 'copy-email',
+          text: 'Copy Email Address',
+          action: () => {
+            navigator.clipboard.writeText('mdnjenga@gmail.com');
+            setMessages(prev => [...prev, {
+              id: Date.now().toString(),
+              text: "Email address copied to clipboard!",
+              sender: 'bot'
+            }]);
+          }
+        },
+        {
           id: 'schedule',
           text: 'Schedule a Call',
           action: () => window.open('https://calendly.com/mdnjenga/30min', '_blank')
@@ -99,6 +111,18 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           id: 'email-project',
           text: 'Email Project Details',
           action: () => window.open('mailto:mdnjenga@gmail.com?subject=Project Inquiry', '_blank')
+        },
+        {
+          id: 'copy-email-project',
+          text: 'Copy Email Address',
+          action: () => {
+            navigator.clipboard.writeText('mdnjenga@gmail.com');
+            setMessages(prev => [...prev, {
+              id: Date.now().toString(),
+              text: "Email address copied to clipboard!",
+              sender: 'bot'
+            }]);
+          }
         },
         {
           id: 'schedule-project',
@@ -148,7 +172,7 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       ]
     },
     experience: {
-      text: "I have over 8 years of experience in web and mobile development, working with startups and established companies. My focus is on creating user-centric solutions with a commitment to continuous learning and innovation.",
+      text: "I have over 4 years of experience in web and mobile development, working with startups and established companies. My focus is on creating user-centric solutions with a commitment to continuous learning and innovation.",
       options: [
         {
           id: 'projects',
@@ -174,6 +198,27 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     }
   };
 
+  // Handle bot responses
+  const handleBotResponse = (responseKey: keyof typeof botResponses) => {
+    const response = botResponses[responseKey];
+
+    // Check if this exact message already exists to prevent duplicates
+    const messageExists = messages.some(
+      msg => msg.sender === 'bot' && msg.text === response.text
+    );
+
+    if (!messageExists) {
+      const botMessage: Message = {
+        id: Date.now().toString(),
+        text: response.text,
+        sender: 'bot',
+        options: response.options
+      };
+
+      setMessages(prev => [...prev, botMessage]);
+    }
+  };
+
   // Initialize chat with welcome message only once
   useEffect(() => {
     if (!welcomeSentRef.current) {
@@ -182,6 +227,7 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         handleBotResponse('welcome');
       }, 500);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Auto-scroll to bottom of messages
@@ -227,26 +273,7 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     }, 1000);
   };
 
-  // Handle bot responses
-  const handleBotResponse = (responseKey: keyof typeof botResponses) => {
-    const response = botResponses[responseKey];
 
-    // Check if this exact message already exists to prevent duplicates
-    const messageExists = messages.some(
-      msg => msg.sender === 'bot' && msg.text === response.text
-    );
-
-    if (!messageExists) {
-      const botMessage: Message = {
-        id: Date.now().toString(),
-        text: response.text,
-        sender: 'bot',
-        options: response.options
-      };
-
-      setMessages(prev => [...prev, botMessage]);
-    }
-  };
 
   return (
     <motion.div
@@ -324,7 +351,8 @@ const ChatBot: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         `}
                       >
                         {option.id.includes('resume') && <FileText size={14} className="mr-2" />}
-                        {option.id.includes('email') && <Mail size={14} className="mr-2" />}
+                        {option.id.includes('email') && !option.id.includes('copy') && <Mail size={14} className="mr-2" />}
+                        {option.id.includes('copy-email') && <Clipboard size={14} className="mr-2" />}
                         {(option.id.includes('view') || option.id.includes('schedule') || option.id.includes('projects')) && <ExternalLink size={14} className="mr-2" />}
                         {option.id.includes('download') && <Download size={14} className="mr-2" />}
                         {option.text}
