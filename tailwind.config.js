@@ -23,8 +23,8 @@ export default {
 
         // Neon Theme (instead of Alien)
         'neon-bg': '#0A1E1A',
-        'neon-primary': '#00F5D4',
-        'neon-secondary': '#00B295',
+        'neon-primary': '#5CEFB8',  // Updated to match inspiration's teal/mint green
+        'neon-secondary': '#3DA88A', // Adjusted secondary color
         'neon-accent': '#F0F600',
         'neon-text': '#E2E8F0',
         'neon-muted': '#94A3B8',

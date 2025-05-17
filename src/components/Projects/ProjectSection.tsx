@@ -28,7 +28,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
     >
       {/* Divider line */}
       {sectionIndex > 0 && (
-        <div className={`absolute -top-12 left-0 right-0 h-px opacity-20
+        <div className={`absolute -top-12 -left-24 -right-24 h-px opacity-20
           ${theme === 'light' ? 'bg-light-secondary' : ''}
           ${theme === 'dark' ? 'bg-dark-secondary' : ''}
           ${theme === 'neon' ? 'bg-neon-secondary' : ''}
@@ -37,14 +37,14 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
         {/* Left column - Section title and description */}
         <div className="md:pr-8">
-          <h2 className={`text-2xl md:text-3xl lg:text-4xl font-sans uppercase tracking-wide mb-8
+          <h2 className={`text-xl md:text-2xl font-sans uppercase tracking-[0.2em] mb-8 font-light
             ${theme === 'light' ? 'text-light-primary' : ''}
             ${theme === 'dark' ? 'text-dark-primary' : ''}
             ${theme === 'neon' ? 'text-neon-primary' : ''}
           `}>
             {title}
           </h2>
-          <p className={`text-base md:text-lg leading-relaxed font-sans max-w-md
+          <p className={`text-sm md:text-base leading-relaxed font-sans max-w-md opacity-80
             ${theme === 'light' ? 'text-light-secondary' : ''}
             ${theme === 'dark' ? 'text-dark-secondary' : ''}
             ${theme === 'neon' ? 'text-neon-secondary' : ''}

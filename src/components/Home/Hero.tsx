@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 import SocialIcons from '../UI/SocialIcons';
-import { ArrowDown } from 'lucide-react';
 import AnimatedDevSvg from '../UI/AnimatedDevSvg';
 
 const Hero: React.FC = () => {
@@ -46,15 +45,8 @@ const Hero: React.FC = () => {
     })
   };
 
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center px-6 overflow-hidden">
+    <section className="relative min-h-[90vh] flex flex-col justify-center pt-8 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className={`absolute top-0 right-0 w-full h-full bg-gradient-to-br opacity-10
@@ -76,7 +68,7 @@ const Hero: React.FC = () => {
         `}></div>
       </div>
 
-      <div className="container mx-auto max-w-7xl">
+      <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left side - Text content */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
@@ -87,7 +79,7 @@ const Hero: React.FC = () => {
               initial="hidden"
               animate="visible"
             >
-              <h1 className={`text-5xl md:text-7xl font-display font-bold tracking-tighter
+              <h1 className={`text-[2.5rem] md:text-[3.5rem] font-display font-bold tracking-tighter
                 ${theme === 'light' ? 'text-light-text' : ''}
                 ${theme === 'dark' ? 'text-dark-text' : ''}
                 ${theme === 'neon' ? 'text-neon-text' : ''}
@@ -103,7 +95,7 @@ const Hero: React.FC = () => {
               animate="visible"
               transition={{ delay: 0.1 }}
             >
-              <h1 className={`text-5xl md:text-7xl font-display font-bold tracking-tighter
+              <h1 className={`text-[2.5rem] md:text-[3.5rem] font-display font-bold tracking-tighter
                 ${theme === 'light' ? 'text-light-primary' : ''}
                 ${theme === 'dark' ? 'text-dark-primary' : ''}
                 ${theme === 'neon' ? 'text-neon-primary' : ''}
@@ -126,7 +118,7 @@ const Hero: React.FC = () => {
 
             {/* Description */}
             <motion.p
-              className={`text-base md:text-lg max-w-xl mb-8 leading-relaxed tracking-wide font-light
+              className={`text-[1rem] md:text-[1.125rem] max-w-xl mb-8 leading-relaxed tracking-wide font-light
                 ${theme === 'light' ? 'text-light-secondary' : ''}
                 ${theme === 'dark' ? 'text-dark-secondary' : ''}
                 ${theme === 'neon' ? 'text-neon-secondary' : ''}
@@ -164,25 +156,6 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll down indicator */}
-      <motion.button
-        onClick={scrollToProjects}
-        className={`absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center
-          ${theme === 'light' ? 'text-light-secondary hover:text-light-primary' : ''}
-          ${theme === 'dark' ? 'text-dark-secondary hover:text-dark-primary' : ''}
-          ${theme === 'neon' ? 'text-neon-secondary hover:text-neon-primary' : ''}
-        `}
-        custom={3}
-        variants={fadeInVariants}
-        initial="hidden"
-        animate="visible"
-        whileHover={{ y: 5 }}
-        transition={{ duration: 0.2 }}
-      >
-        <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
-        <ArrowDown size={20} />
-      </motion.button>
     </section>
   );
 };

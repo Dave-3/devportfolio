@@ -107,14 +107,14 @@ const ProjectsList: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-20"
         >
-          <h2 className={`text-2xl md:text-3xl font-sans font-bold mb-4
+          <h2 className={`text-2xl md:text-3xl font-sans font-medium mb-4 tracking-wide
             ${theme === 'light' ? 'text-light-text' : ''}
             ${theme === 'dark' ? 'text-dark-text' : ''}
             ${theme === 'neon' ? 'text-neon-text' : ''}
           `}>
             Projects
           </h2>
-          <p className={`text-base max-w-2xl font-sans
+          <p className={`text-sm md:text-base max-w-2xl font-sans opacity-80
             ${theme === 'light' ? 'text-light-secondary' : ''}
             ${theme === 'dark' ? 'text-dark-secondary' : ''}
             ${theme === 'neon' ? 'text-neon-secondary' : ''}
@@ -124,7 +124,7 @@ const ProjectsList: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-32">
+        <div className="space-y-24">
           {projectCategories.map((category, index) => (
             <ProjectSection
               key={category.id}

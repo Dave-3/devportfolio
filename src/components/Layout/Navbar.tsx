@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
   };
 
   const navbarClasses = `
-    fixed top-6 left-6 right-6 z-40 transition-all duration-300 px-6 md:px-8 rounded-full
+    fixed top-4 left-0 right-0 mx-6 z-40 transition-all duration-300 px-6 md:px-8 rounded-full
     ${scrolled ? 'py-3' : 'py-4'}
     ${scrolled ? 'backdrop-blur-md' : 'backdrop-blur-sm'}
     ${theme === 'light' && scrolled ? 'bg-light-bg/90 shadow-sm border border-gray-200' : theme === 'light' ? 'border border-gray-200/50' : ''}
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3
@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
           `}>
             <span className="font-sans font-bold text-sm">DN</span>
           </div>
-          <span className={`font-sans font-medium text-sm tracking-widest uppercase
+          <span className={`font-sans font-medium text-[0.875rem] tracking-widest uppercase
             ${theme === 'light' ? 'text-light-text' : ''}
             ${theme === 'dark' ? 'text-dark-text' : ''}
             ${theme === 'neon' ? 'text-neon-text' : ''}
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
               <button
                 key={link.to}
                 onClick={link.action}
-                className={`font-sans text-xs uppercase tracking-wider transition duration-200
+                className={`font-sans text-[0.75rem] uppercase tracking-wider transition duration-200
                   ${theme === 'light' ? 'text-light-text hover:text-light-primary' : ''}
                   ${theme === 'dark' ? 'text-dark-text hover:text-dark-primary' : ''}
                   ${theme === 'neon' ? 'text-neon-text hover:text-neon-primary' : ''}
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`font-sans text-xs uppercase tracking-wider transition duration-200
+                className={`font-sans text-[0.75rem] uppercase tracking-wider transition duration-200
                   ${theme === 'light' ? 'text-light-text hover:text-light-primary' : ''}
                   ${theme === 'dark' ? 'text-dark-text hover:text-dark-primary' : ''}
                   ${theme === 'neon' ? 'text-neon-text hover:text-neon-primary' : ''}
@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
 
           <button
             onClick={toggleTheme}
-            className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-colors duration-200 flex items-center
+            className={`px-4 py-2 rounded-full text-[0.75rem] uppercase tracking-wider transition-colors duration-200 flex items-center
               ${theme === 'light' ? 'bg-light-bg border border-gray-200 text-light-text hover:text-light-primary' : ''}
               ${theme === 'dark' ? 'bg-gray-800 text-dark-text hover:text-dark-primary' : ''}
               ${theme === 'neon' ? 'bg-neon-bg/80 border border-neon-primary/20 text-neon-text hover:text-neon-primary' : ''}
@@ -170,7 +170,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className={`
-          md:hidden absolute top-full mt-3 left-6 right-6 py-6 px-6
+          md:hidden absolute top-full mt-2 left-0 right-0 mx-6 py-6 px-6
           shadow-lg backdrop-blur-lg rounded-2xl border
           ${theme === 'light' ? 'bg-light-bg/95 text-light-text border-gray-200' : ''}
           ${theme === 'dark' ? 'bg-dark-bg/95 text-dark-text border-gray-800' : ''}
@@ -182,7 +182,7 @@ const Navbar: React.FC = () => {
                 <button
                   key={link.to}
                   onClick={link.action}
-                  className={`font-sans text-sm uppercase tracking-wider py-2 transition duration-200 text-left
+                  className={`font-sans text-[0.875rem] uppercase tracking-wider py-2 transition duration-200 text-left
                     ${theme === 'light' ? 'text-light-text hover:text-light-primary' : ''}
                     ${theme === 'dark' ? 'text-dark-text hover:text-dark-primary' : ''}
                     ${theme === 'neon' ? 'text-neon-text hover:text-neon-primary' : ''}
@@ -194,7 +194,7 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`font-sans text-sm uppercase tracking-wider py-2 transition duration-200
+                  className={`font-sans text-[0.875rem] uppercase tracking-wider py-2 transition duration-200
                     ${theme === 'light' ? 'text-light-text hover:text-light-primary' : ''}
                     ${theme === 'dark' ? 'text-dark-text hover:text-dark-primary' : ''}
                     ${theme === 'neon' ? 'text-neon-text hover:text-neon-primary' : ''}
