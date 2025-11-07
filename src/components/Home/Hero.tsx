@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
               initial="hidden"
               animate="visible"
             >
-              <h1 className={`text-[2.5rem] md:text-[3.5rem] font-display font-bold tracking-tighter
+              <h1 className={`text-[2.1rem] md:text-[3rem] font-title font-semibold uppercase tracking-[0.08em]
                 ${theme === 'light' ? 'text-light-text' : ''}
                 ${theme === 'dark' ? 'text-dark-text' : ''}
                 ${theme === 'neon' ? 'text-neon-text' : ''}
@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
               animate="visible"
               transition={{ delay: 0.1 }}
             >
-              <h1 className={`text-[2.5rem] md:text-[3.5rem] font-display font-bold tracking-tighter
+              <h1 className={`text-[2.1rem] md:text-[3rem] font-display uppercase tracking-[0.12em]
                 ${theme === 'light' ? 'text-light-primary' : ''}
                 ${theme === 'dark' ? 'text-dark-primary' : ''}
                 ${theme === 'neon' ? 'text-neon-primary' : ''}
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
 
             {/* Description */}
             <motion.p
-              className={`text-[1rem] md:text-[1.125rem] max-w-xl mb-8 leading-relaxed tracking-wide font-light
+              className={`text-sm md:text-base max-w-xl mb-8 leading-relaxed tracking-[0.05em] font-sans
                 ${theme === 'light' ? 'text-light-secondary' : ''}
                 ${theme === 'dark' ? 'text-dark-secondary' : ''}
                 ${theme === 'neon' ? 'text-neon-secondary' : ''}
@@ -128,9 +128,9 @@ const Hero: React.FC = () => {
               initial="hidden"
               animate="visible"
             >
-              I'm a software developer with passion for creating systems and minimalistic websites that are responsive,
-              easy to maintain, easy to scale and most importantly prioritizes user experience.
-              Love learning new technologies and incorporating them in to my workflow.
+              I'm a freelance creative developer, 3D animator, Robotics & Embedded systems engineer.
+              My goal is to blend imaginative thinking and design with an analytical approach to solve problems where business and technology meet.
+              Feel free to hit me up :)
             </motion.p>
 
             {/* Social icons */}

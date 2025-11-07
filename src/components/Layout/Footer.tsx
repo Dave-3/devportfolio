@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 
 const Footer: React.FC = () => {
@@ -9,7 +9,6 @@ const Footer: React.FC = () => {
   const socialLinks = [
     { icon: <Github size={20} />, url: 'https://github.com/Dave-3', label: 'GitHub' },
     { icon: <Linkedin size={20} />, url: 'https://www.linkedin.com/in/davidnmburu/', label: 'LinkedIn' },
-    { icon: <Twitter size={20} />, url: 'https://twitter.com', label: 'Twitter' },
     { icon: <Mail size={20} />, url: 'mailto:mdnjenga@gmail.com', label: 'Email' },
   ];
 

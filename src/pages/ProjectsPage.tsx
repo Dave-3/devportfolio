@@ -6,59 +6,70 @@ import ProjectCard, { ProjectProps } from '../components/Projects/ProjectCard';
 // Extended project data for the dedicated projects page
 const projects: ProjectProps[] = [
   {
-    id: 'project1',
-    title: 'District Athletics',
-    description: 'A comprehensive platform for managing athletic events, team coordination, and score tracking for district-level competitions.',
+    id: 'safeher',
+    title: 'Safeher',
+    description: 'AI-assisted reporting platform across web and mobile that keeps social channels safer for women while protecting income opportunities.',
     year: '2024',
-    tags: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
-    demoUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    mobileImage: 'https://images.pexels.com/photos/11311754/pexels-photo-11311754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    tags: ['Next.js', 'React Native', 'Node.js', 'AI Safety'],
+    demoUrl: 'https://safeherkenya.org/',
+    githubUrl: '',
+    image: '/safeher.png',
+    mobileImage: '/safeher.png'
   },
   {
-    id: 'project2',
-    title: 'Wanderseat',
-    description: 'An innovative travel application that helps users discover hidden local spots, authentic experiences, and personalized travel itineraries.',
+    id: 'treasured-scents',
+    title: 'Treasured Scents',
+    description: 'Modern fragrance commerce experience with storytelling, scent quiz funnels, and Odoo-backed fulfillment flows.',
     year: '2024',
-    tags: ['React Native', 'Firebase', 'Google Maps API'],
-    demoUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
-    image: 'https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    mobileImage: 'https://images.pexels.com/photos/5053740/pexels-photo-5053740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    tags: ['Next.js', 'Odoo', 'Commerce.js'],
+    demoUrl: 'https://treasuredscents.co.ke/',
+    githubUrl: '',
+    image: '/treasuredscents.png',
+    mobileImage: '/treasuredscents.png'
   },
   {
-    id: 'project3',
-    title: 'TaskMaster Pro',
-    description: 'A productivity application designed to streamline task management with features like priority sorting, deadline tracking, and team collaboration.',
+    id: 'nurupay',
+    title: 'NuruPay',
+    description: 'Unified payments hub delivering seamless personal and business transactions with automated reconciliation and alerts.',
+    year: '2024',
+    tags: ['React', 'Node.js', 'Fintech'],
+    demoUrl: '',
+    githubUrl: '',
+    image: '/nurupay-1024x639.png',
+    mobileImage: '/nurupay-1024x639.png'
+  },
+  {
+    id: 'inkibank',
+    title: 'Inkibank',
+    description: 'Knowledge base preserving indigenous innovations and guiding patent workflows for Kenyan communities.',
     year: '2023',
-    tags: ['Vue.js', 'Express', 'PostgreSQL'],
-    demoUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
-    image: 'https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    mobileImage: 'https://images.pexels.com/photos/5053743/pexels-photo-5053743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    tags: ['React', 'Yii2', 'React Native'],
+    demoUrl: '',
+    githubUrl: '',
+    image: '/inkibank.jpg',
+    mobileImage: '/inkibank.jpg'
   },
   {
-    id: 'project4',
-    title: 'FinTrack Dashboard',
-    description: 'A financial tracking dashboard that provides users with insightful analytics, budget management tools, and expense categorization capabilities.',
+    id: 'appinapp',
+    title: 'AppinApp',
+    description: 'All-in-one platform powering POS, online ordering, and customer engagement for restaurants and service brands.',
     year: '2023',
-    tags: ['React', 'D3.js', 'Express', 'MongoDB'],
-    demoUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
-    image: 'https://images.pexels.com/photos/7567460/pexels-photo-7567460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    mobileImage: 'https://images.pexels.com/photos/7567433/pexels-photo-7567433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    tags: ['WordPress', 'PHP', 'POS'],
+    demoUrl: 'https://revamp.appinapp.ke/wp/',
+    githubUrl: '',
+    image: '/appinapp.png',
+    mobileImage: '/appinapp.png'
   },
   {
-    id: 'project5',
-    title: 'EcoMarket',
-    description: 'An e-commerce platform focused on sustainable and eco-friendly products, featuring carbon footprint tracking and ethical sourcing information.',
+    id: 'dukalink',
+    title: 'Dukalink Dealer Network',
+    description: 'Enterprise POS and HRMS suite enabling Safaricom dealers to manage teams, stock, and cashflow across locations.',
     year: '2022',
-    tags: ['Next.js', 'Tailwind CSS', 'Stripe', 'Prisma'],
-    demoUrl: 'https://example.com',
-    githubUrl: 'https://github.com',
-    image: 'https://images.pexels.com/photos/5417639/pexels-photo-5417639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    mobileImage: 'https://images.pexels.com/photos/4549411/pexels-photo-4549411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    tags: ['React', 'Node.js', 'HRMS'],
+    demoUrl: '',
+    githubUrl: '',
+    image: '/dukalink.png',
+    mobileImage: '/dukalink.png'
   }
 ];
 
@@ -93,8 +104,8 @@ const ProjectsPage: React.FC = () => {
             ${theme === 'neon' ? 'text-neon-secondary' : ''}
           `}>
             Below is a curated collection of my work that demonstrates my skills and experience.
-            Each project is briefly described with links to code repositories and live demos.
-            Hover over the project images to see mobile views of the applications.
+            Each project highlights the stack and impact, with live previews where sharing is possible.
+            Desktop and mobile screens sit side by side so you can review the experience at a glance.
           </p>
         </motion.div>
 

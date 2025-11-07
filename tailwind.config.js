@@ -36,8 +36,9 @@ export default {
         'info': '#3B82F6',
       },
       fontFamily: {
-        sans: ['Lato', 'Inter var', 'sans-serif'],
-        display: ['Manrope', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        title: ['var(--font-title)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       backdropBlur: {

@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Typography: custom fonts matching reference site */
+@font-face {
+  font-family: 'Zighead';
+  src: url('/fonts/Zighead.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optiker K';
+  src: url('/fonts/Optiker-K.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-display: 'Zighead', system-ui, sans-serif;
+  --font-title: 'Optiker K', system-ui, sans-serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+}
+
 /* Font normalization and consistency */
 html {
   -webkit-text-size-adjust: 100%;
@@ -29,6 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-family: var(--font-body);
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 

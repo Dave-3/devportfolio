@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Twitter, Music } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { motion } from 'framer-motion';
 
@@ -36,7 +36,6 @@ const SocialIcons: React.FC = () => {
 
   const socialLinks: SocialLink[] = [
     { icon: <Github size={20} />, url: 'https://github.com/Dave-3', label: 'GitHub' },
-    { icon: <Twitter size={20} />, url: 'https://twitter.com/', label: 'Twitter' },
     { icon: <Linkedin size={20} />, url: 'https://www.linkedin.com/in/davidnmburu/', label: 'LinkedIn' },
     {
       icon: <Mail size={20} />,
@@ -44,8 +43,7 @@ const SocialIcons: React.FC = () => {
       label: 'Email',
       onClick: handleEmailClick,
       tooltip: showEmailTooltip ? (emailCopied ? "Email copied!" : "Click again to copy email") : null
-    },
-    { icon: <Music size={20} />, url: '#', label: 'Music' },
+    }
   ];
 
   const container = {

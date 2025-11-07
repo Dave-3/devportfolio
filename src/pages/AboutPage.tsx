@@ -2,6 +2,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 
+interface CertificationLink {
+  label: string;
+  url: string;
+}
+
+interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  year: string;
+  description: string;
+  image: string;
+  links: CertificationLink[];
+}
+
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
 
@@ -9,7 +24,33 @@ const AboutPage: React.FC = () => {
     { category: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'] },
     { category: 'Backend', items: ['Node.js', 'Express', 'NestJS', 'Django', 'GraphQL'] },
     { category: 'Mobile', items: ['React Native', 'Flutter', 'Swift', 'Kotlin'] },
-    { category: 'Other', items: ['AWS', 'Docker', 'CI/CD', 'Jest', 'Figma'] },
+    { category: 'Other', items: ['AWS', 'Docker', 'CI/CD', 'Jest', 'Figma', 'Odoo'] },
+  ];
+
+  const certifications: Certification[] = [
+    {
+      id: 'oracle-devops',
+      title: 'Oracle Cloud DevOps Professional',
+      issuer: 'Oracle University',
+      year: '2024',
+      description: 'Validated expertise in deploying, automating, and monitoring workloads on Oracle Cloud Infrastructure.',
+      image: '/Oracle%20Devops%20Professional%20eCertificate.jpg',
+      links: [
+        { label: 'View badge', url: '/Oracle%20Devops%20Professional%20eCertificate.jpg' },
+        { label: 'Download eCertificate', url: '/Oracle%20Devops%20Professional%20eCertificate.pdf' }
+      ]
+    },
+    {
+      id: 'simplon',
+      title: 'Simplon Fullstack Developer Programme',
+      issuer: 'Simplon.co',
+      year: '2023',
+      description: 'Immersive training focused on product strategy, UX, and full-stack delivery for impact-focused teams.',
+      image: '',
+      links: [
+        { label: 'Download certificate', url: '/David%20Njenga%20Mburu%20Simplon.pdf' }
+      ]
+    }
   ];
 
   return (
@@ -41,7 +82,7 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="md:col-span-2"
           >
-            <h2 className={`text-2xl font-display font-semibold mb-4
+            <h2 className={`text-2xl font-title font-semibold mb-4
               ${theme === 'light' ? 'text-light-text' : ''}
               ${theme === 'dark' ? 'text-dark-text' : ''}
               ${theme === 'neon' ? 'text-neon-text' : ''}
@@ -80,7 +121,7 @@ const AboutPage: React.FC = () => {
               ${theme === 'neon' ? 'bg-neon-secondary/10' : ''}
             `}
           >
-            <h2 className={`text-xl font-display font-semibold mb-4
+            <h2 className={`text-xl font-title font-semibold mb-4
               ${theme === 'light' ? 'text-light-text' : ''}
               ${theme === 'dark' ? 'text-dark-text' : ''}
               ${theme === 'neon' ? 'text-neon-text' : ''}
@@ -155,9 +196,97 @@ const AboutPage: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="mt-16"
+        >
+          <h2 className={`text-2xl font-title font-semibold mb-6
+            ${theme === 'light' ? 'text-light-text' : ''}
+            ${theme === 'dark' ? 'text-dark-text' : ''}
+            ${theme === 'neon' ? 'text-neon-text' : ''}
+          `}>
+            Certifications & Credentials
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                className={`rounded-lg p-6 flex flex-col gap-4 border
+                  ${theme === 'light' ? 'bg-gray-50 border-gray-200' : ''}
+                  ${theme === 'dark' ? 'bg-gray-800/40 border-gray-700/60' : ''}
+                  ${theme === 'neon' ? 'bg-neon-secondary/10 border-neon-secondary/20' : ''}
+                `}
+              >
+                {cert.image ? (
+                  <div className="w-full overflow-hidden rounded-md border border-dashed border-current/20">
+                    <img
+                      src={cert.image}
+                      alt={`${cert.title} credential`}
+                      className="w-full h-48 object-contain bg-white"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-full h-48 rounded-md grid place-items-center text-center text-sm uppercase tracking-[0.18em] font-title
+                    ${theme === 'light' ? 'bg-light-primary/5 text-light-primary' : ''}
+                    ${theme === 'dark' ? 'bg-dark-primary/10 text-dark-primary' : ''}
+                    ${theme === 'neon' ? 'bg-neon-primary/10 text-neon-primary' : ''}
+                  `}>
+                    {cert.title}
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <h3 className={`text-lg font-title font-semibold
+                    ${theme === 'light' ? 'text-light-text' : ''}
+                    ${theme === 'dark' ? 'text-dark-text' : ''}
+                    ${theme === 'neon' ? 'text-neon-text' : ''}
+                  `}>
+                    {cert.title}
+                  </h3>
+                  <p className={`text-sm uppercase tracking-[0.12em] font-title
+                    ${theme === 'light' ? 'text-light-secondary' : ''}
+                    ${theme === 'dark' ? 'text-dark-secondary' : ''}
+                    ${theme === 'neon' ? 'text-neon-secondary' : ''}
+                  `}>
+                    {cert.issuer} · {cert.year}
+                  </p>
+                  <p className={`text-sm leading-relaxed
+                    ${theme === 'light' ? 'text-light-secondary' : ''}
+                    ${theme === 'dark' ? 'text-dark-secondary' : ''}
+                    ${theme === 'neon' ? 'text-neon-secondary' : ''}
+                  `}>
+                    {cert.description}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3 mt-2">
+                  {cert.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center px-4 py-2 text-xs uppercase tracking-[0.14em] font-title rounded-full border transition-colors duration-200
+                        ${theme === 'light' ? 'border-light-primary text-light-primary hover:bg-light-primary/5' : ''}
+                        ${theme === 'dark' ? 'border-dark-primary text-dark-primary hover:bg-dark-primary/10' : ''}
+                        ${theme === 'neon' ? 'border-neon-primary text-neon-primary hover:bg-neon-primary/10' : ''}
+                      `}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <h2 className={`text-2xl font-display font-semibold mb-6
+          <h2 className={`text-2xl font-title font-semibold mb-6
             ${theme === 'light' ? 'text-light-text' : ''}
             ${theme === 'dark' ? 'text-dark-text' : ''}
             ${theme === 'neon' ? 'text-neon-text' : ''}
