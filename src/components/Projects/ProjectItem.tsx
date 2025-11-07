@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 import { ExternalLink, Github } from 'lucide-react';
 import { ProjectProps } from './ProjectCard';
@@ -21,7 +21,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
       transition={{ duration: 0.3, delay: index * 0.05 }}
     >
       <div
-        className="flex flex-col md:flex-row items-start relative md:py-2 md:transition-all md:duration-300 md:px-2 rounded"
+        className="flex flex-row items-center gap-6 py-4 px-4 -mx-4 transition-all duration-300 rounded-md cursor-default"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
@@ -33,19 +33,21 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
         }}
       >
         {/* Project number */}
-        <div className="w-8 md:w-10 flex-shrink-0 mb-2 md:mb-0 text-right pr-2">
-          <span className={`text-xs font-mono opacity-70
-            ${theme === 'light' ? 'text-light-secondary' : ''}
-            ${theme === 'dark' ? 'text-dark-secondary' : ''}
-            ${theme === 'neon' ? 'text-neon-secondary' : ''}
-          `}>
-            {index < 9 ? `0${index + 1}` : index + 1}
-          </span>
+  <div className="flex flex-row items-center opacity-60 font-title text-[0.6rem] tracking-[0.22em] uppercase">
+          {(index + 1).toString().padStart(2, '0').split('').map((digit, i) => (
+            <div key={i} className={`
+              ${theme === 'light' ? 'text-light-secondary' : ''}
+              ${theme === 'dark' ? 'text-dark-secondary' : ''}
+              ${theme === 'neon' ? 'text-neon-secondary' : ''}
+            `}>
+              {digit}
+            </div>
+          ))}
         </div>
 
         {/* Project year */}
-        <div className="w-12 md:w-16 flex-shrink-0 mb-2 md:mb-0 text-right pr-4">
-          <span className={`text-xs font-mono opacity-70
+  <div className="w-[40px] font-title text-[0.6rem] leading-tight tracking-[0.16em] uppercase">
+          <span className={`opacity-70
             ${theme === 'light' ? 'text-light-secondary' : ''}
             ${theme === 'dark' ? 'text-dark-secondary' : ''}
             ${theme === 'neon' ? 'text-neon-secondary' : ''}
@@ -55,56 +57,76 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
         </div>
 
         {/* Project title and links */}
-        <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-between">
-          <h3 className={`text-base font-sans mb-2 md:mb-0 transition-all duration-300 uppercase tracking-wider
-            ${isHovered ? 'font-medium' : 'font-normal'}
-            ${theme === 'light' ? `text-light-text ${isHovered ? 'text-light-primary' : ''}` : ''}
-            ${theme === 'dark' ? `text-dark-text ${isHovered ? 'text-dark-primary' : ''}` : ''}
-            ${theme === 'neon' ? `text-neon-text ${isHovered ? 'text-neon-primary' : ''}` : ''}
-          `}>
+        <div className="flex-1 flex flex-row items-center justify-between">
+          <h3 
+            className={`text-xs sm:text-sm font-title uppercase tracking-[0.12em] transition-all duration-300
+              ${isHovered ? 'font-semibold' : 'font-medium'}
+              ${theme === 'light' ? `text-light-text ${isHovered ? 'text-light-primary' : ''}` : ''}
+              ${theme === 'dark' ? `text-dark-text ${isHovered ? 'text-dark-primary' : ''}` : ''}
+              ${theme === 'neon' ? `text-neon-text ${isHovered ? 'text-neon-primary' : ''}` : ''}
+            `}
+          >
             {project.title}
           </h3>
 
-          <div className="flex space-x-3 md:ml-4">
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center text-sm font-medium transition-colors
-                ${theme === 'light' ? 'text-light-primary hover:text-light-primary/80' : ''}
-                ${theme === 'dark' ? 'text-dark-primary hover:text-dark-primary/80' : ''}
-                ${theme === 'neon' ? 'text-neon-primary hover:text-neon-primary/80' : ''}
-              `}
-            >
-              <ExternalLink size={16} />
-            </a>
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center text-sm font-medium transition-colors
-                ${theme === 'light' ? 'text-light-primary hover:text-light-primary/80' : ''}
-                ${theme === 'dark' ? 'text-dark-primary hover:text-dark-primary/80' : ''}
-                ${theme === 'neon' ? 'text-neon-primary hover:text-neon-primary/80' : ''}
-              `}
-            >
-              <Github size={16} />
-            </a>
+          <div className="flex flex-row items-center font-title text-[0.6rem] uppercase tracking-[0.12em]">
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-2 hover:bg-opacity-5 rounded transition-colors flex items-center gap-1
+                  ${theme === 'light' ? 'text-light-primary hover:bg-light-primary' : ''}
+                  ${theme === 'dark' ? 'text-dark-primary hover:bg-dark-primary' : ''}
+                  ${theme === 'neon' ? 'text-neon-primary hover:bg-neon-primary' : ''}
+                `}
+              >
+                <ExternalLink size={16} />
+                <span className="hidden lg:inline">Visit</span>
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-2 hover:bg-opacity-5 rounded transition-colors flex items-center gap-1
+                  ${theme === 'light' ? 'text-light-primary hover:bg-light-primary' : ''}
+                  ${theme === 'dark' ? 'text-dark-primary hover:bg-dark-primary' : ''}
+                  ${theme === 'neon' ? 'text-neon-primary hover:bg-neon-primary' : ''}
+                `}
+              >
+                <Github size={16} />
+                <span className="hidden lg:inline">Code</span>
+              </a>
+            )}
           </div>
         </div>
       </div>
 
-      {/* Project image - shown on hover for desktop, always visible for mobile */}
+      {/* Mobile image preview */}
       <div
-        className={`
-          mt-4 md:mt-0 md:absolute md:top-0 md:left-1/2 md:transform md:-translate-x-1/2
-          w-full md:w-[400px] md:h-auto md:aspect-[4/3] rounded-md overflow-hidden md:z-50
-          md:pointer-events-none
-          block md:hidden lg:block
+        className={`mt-4 block lg:hidden w-full overflow-hidden rounded-md border aspect-[3/2]
+          ${theme === 'light' ? 'border-light-primary/20 bg-light-bg' : ''}
+          ${theme === 'dark' ? 'border-dark-primary/30 bg-dark-bg' : ''}
+          ${theme === 'neon' ? 'border-neon-primary/30 bg-neon-bg' : ''}
         `}
+      >
+        <img
+          src={project.mobileImage || project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-contain"
+        />
+      </div>
+
+      {/* Project image - shown on hover for desktop */}
+      <div
+        className="hidden lg:block absolute w-[400px] h-[400px] overflow-hidden z-10 rounded-md pointer-events-none"
         style={{
+          left: '50%',
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
           opacity: isHovered ? 1 : 0,
-          top: '-100px',
           transition: 'opacity 500ms ease-out',
         }}
       >
@@ -127,7 +149,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-contain object-center"
           style={{
             transform: isHovered ? 'scale(1.05)' : 'scale(1)',
             transition: 'transform 500ms ease-out',
@@ -143,8 +165,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, index }) => {
       </div>
 
       {/* Mobile-only description */}
-      <div className="block md:hidden mt-2">
-        <p className={`text-xs opacity-70 leading-relaxed
+  <div className="block md:hidden mt-3">
+  <p className={`text-xs opacity-70 leading-relaxed font-sans tracking-[0.01em]
           ${theme === 'light' ? 'text-light-secondary' : ''}
           ${theme === 'dark' ? 'text-dark-secondary' : ''}
           ${theme === 'neon' ? 'text-neon-secondary' : ''}

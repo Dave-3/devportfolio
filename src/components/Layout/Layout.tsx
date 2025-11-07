@@ -10,13 +10,13 @@ const Layout: React.FC = () => {
 
   return (
     <div className={`
-      flex flex-col min-h-screen w-full overflow-hidden
+      flex flex-col min-h-screen w-full
       ${theme === 'light' ? 'bg-light-bg text-light-text' : ''}
       ${theme === 'dark' ? 'bg-dark-bg text-dark-text' : ''}
       ${theme === 'neon' ? 'bg-neon-bg text-neon-text' : ''}
     `}>
       <Navbar />
-      <main className="flex-grow pt-16 w-full">
+      <main className="flex-grow pt-16 w-full overflow-x-hidden">
         <AnimatePresence mode="wait">
           <Outlet />
         </AnimatePresence>
