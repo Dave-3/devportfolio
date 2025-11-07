@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, Music, Menu, X, MessageSquare } from 'lucide-react';
+import { Moon, Sun, Music, Menu, X } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { motion } from 'framer-motion';
 import SocialIcons from '../UI/SocialIcons';
@@ -9,7 +9,6 @@ const Navbar: React.FC = () => {
   const { theme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isChatOpen, setIsChatOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -80,12 +79,16 @@ const Navbar: React.FC = () => {
       <div className="container flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3
-            ${theme === 'light' ? 'bg-light-primary text-white' : ''}
-            ${theme === 'dark' ? 'bg-dark-primary text-dark-bg' : ''}
-            ${theme === 'neon' ? 'bg-neon-primary text-neon-bg' : ''}
+          <div className={`w-9 h-9 rounded-full overflow-hidden mr-3 border
+            ${theme === 'light' ? 'border-light-primary/40 bg-light-bg' : ''}
+            ${theme === 'dark' ? 'border-dark-primary/50 bg-dark-bg' : ''}
+            ${theme === 'neon' ? 'border-neon-primary/50 bg-neon-bg' : ''}
           `}>
-            <span className="font-sans font-bold text-sm">DN</span>
+            <img
+              src="/favicon.jpg"
+              alt="David Njenga"
+              className="w-full h-full object-cover"
+            />
           </div>
           <span className={`font-sans font-medium text-[0.875rem] tracking-widest uppercase
             ${theme === 'light' ? 'text-light-text' : ''}
